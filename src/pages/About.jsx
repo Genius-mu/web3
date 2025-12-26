@@ -1,195 +1,235 @@
 // src/pages/About.jsx
 import { motion } from "framer-motion";
 import {
+  Target,
+  Lightbulb,
+  Heart,
   Users,
-  Shield,
-  Code,
-  Globe,
-  HeartHandshake,
   Rocket,
+  Shield,
+  Zap,
+  Globe,
 } from "lucide-react";
 
 export default function About() {
+  const values = [
+    {
+      icon: Target,
+      title: "Innovation First",
+      desc: "Pushing the boundaries of what's possible in decentralized technology.",
+    },
+    {
+      icon: Shield,
+      title: "Security & Trust",
+      desc: "Building robust, audited systems that protect user data and assets.",
+    },
+    {
+      icon: Users,
+      title: "Community Driven",
+      desc: "Empowering developers and users to shape the future together.",
+    },
+    {
+      icon: Globe,
+      title: "Global Accessibility",
+      desc: "Making Web3 technology accessible to everyone, everywhere.",
+    },
+  ];
+
+  const team = [
+    { role: "Founders", count: "5+", description: "Industry veterans" },
+    { role: "Developers", count: "50+", description: "Full-stack experts" },
+    { role: "Contributors", count: "200+", description: "Community builders" },
+    { role: "Partners", count: "30+", description: "Strategic alliances" },
+  ];
+
   return (
-    <div className="relative overflow-hidden">
-      {/* Subtle background animation */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="water-bg opacity-10"></div>
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#0c101c]">
+      {/* Background Effects */}
+      <div className="absolute inset-0 w-full pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(88,166,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(88,166,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#58a6ff]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#765dff]/10 rounded-full blur-3xl" />
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 text-center py-20 md:py-28">
+      <section className="relative z-20 w-full text-center pt-32 pb-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            About Web3 Hub
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Building the bridge between traditional web and the decentralized
-            future.
-          </p>
+          <motion.h1
+            className="text-5xl md:text-7xl font-black mb-6 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            <span className="bg-gradient-to-r from-[#58a6ff] via-[#765dff] to-[#9c88ff] text-transparent bg-clip-text">
+              About Web3 Hub
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto font-light leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            We're building the infrastructure for the next generation of the
+            internet—decentralized, open, and owned by everyone.
+          </motion.p>
         </motion.div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="relative z-10 py-16">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              At Web3 Hub, we believe the future of the internet is
-              decentralized, transparent, and user-owned. Our mission is to
-              empower developers, creators, and users to build, explore, and
-              thrive in the Web3 ecosystem using beautiful, performant, and
-              accessible tools.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              We combine cutting-edge React technologies with Ethereum and
-              modern design principles to create experiences that are fast,
-              secure, and delightful.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <div className="glow bg-gradient-to-br from-blue-900/40 to-purple-900/40 p-8 rounded-3xl border border-blue-500/30 text-center">
-              <Rocket size={64} className="mx-auto mb-4 text-blue-400" />
-              <h3 className="text-2xl font-bold mb-2">Empowering Builders</h3>
-              <p className="text-gray-400">
-                From beginners to experts — everyone has a place here.
+      <section className="relative z-20 w-full py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-slate-900/60 to-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-slate-700/40 hover:border-[#58a6ff]/30 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="p-3 bg-gradient-to-br from-[#58a6ff]/20 to-[#765dff]/20 rounded-2xl mr-4">
+                  <Target size={40} className="text-[#58a6ff]" />
+                </div>
+                <h2 className="text-3xl font-bold text-white">Our Mission</h2>
+              </div>
+              <p className="text-slate-300 leading-relaxed text-lg">
+                To democratize access to decentralized technology and empower
+                developers worldwide to build the future of the internet—one
+                that's transparent, secure, and accessible to all.
               </p>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-slate-900/60 to-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-slate-700/40 hover:border-[#765dff]/30 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="p-3 bg-gradient-to-br from-[#765dff]/20 to-[#9c88ff]/20 rounded-2xl mr-4">
+                  <Lightbulb size={40} className="text-[#765dff]" />
+                </div>
+                <h2 className="text-3xl font-bold text-white">Our Vision</h2>
+              </div>
+              <p className="text-slate-300 leading-relaxed text-lg">
+                A world where everyone has sovereignty over their digital
+                identity, assets, and data—powered by blockchain technology
+                that's intuitive, scalable, and sustainable.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="relative z-10 py-20 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent">
-        <div className="max-w-6xl mx-auto px-4">
+      {/* Core Values */}
+      <section className="relative z-20 w-full py-20 px-4">
+        <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-14 text-white"
           >
             Our Core Values
           </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Shield size={48} className="text-green-400" />,
-                title: "Security First",
-                desc: "We prioritize decentralization, transparency, and best security practices in every project.",
-              },
-              {
-                icon: <Globe size={48} className="text-blue-400" />,
-                title: "Open Source & Community",
-                desc: "Everything we build is open source, and we thrive on collaboration and community contributions.",
-              },
-              {
-                icon: <HeartHandshake size={48} className="text-purple-400" />,
-                title: "User Empowerment",
-                desc: "We build tools that give users control over their data, identity, and digital assets.",
-              },
-            ].map((value, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.03, y: -6 }}
+                  className="bg-gradient-to-b from-slate-900/60 to-slate-800/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-700/40 hover:border-[#58a6ff]/30 transition-all duration-300 text-center"
+                >
+                  <div className="flex justify-center mb-5">
+                    <div className="p-4 bg-gradient-to-br from-[#58a6ff]/10 to-[#765dff]/10 rounded-2xl">
+                      <Icon size={40} className="text-[#58a6ff]" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">
+                    {value.title}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">{value.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Stats */}
+      <section className="relative z-20 w-full py-20 px-4 bg-gradient-to-r from-slate-900/30 via-slate-800/30 to-slate-900/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-14 text-white"
+          >
+            Our Team
+          </motion.h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {team.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="glow bg-slate-800/60 backdrop-blur-md p-8 rounded-2xl border border-slate-700 hover:border-purple-500 transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="cursor-default"
               >
-                <div className="mb-6">{value.icon}</div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-300">{value.desc}</p>
+                <h3 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-[#58a6ff] to-[#765dff] text-transparent bg-clip-text mb-2">
+                  {member.count}
+                </h3>
+                <p className="text-xl font-bold text-white mb-1">
+                  {member.role}
+                </p>
+                <p className="text-slate-400">{member.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team / Why Us */}
-      <section className="relative z-10 py-20">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold mb-10"
-          >
-            Why Choose Web3 Hub?
-          </motion.h2>
-
-          <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="glow bg-slate-800/50 p-8 rounded-2xl border border-slate-700"
-            >
-              <Code size={48} className="mx-auto mb-6 text-blue-400" />
-              <h3 className="text-2xl font-bold mb-4">Modern Tech Stack</h3>
-              <p className="text-gray-300">
-                React, Tailwind CSS, Framer Motion, ethers.js, and more — we use
-                the best tools available.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="glow bg-slate-800/50 p-8 rounded-2xl border border-slate-700"
-            >
-              <Users size={48} className="mx-auto mb-6 text-purple-400" />
-              <h3 className="text-2xl font-bold mb-4">Active Community</h3>
-              <p className="text-gray-300">
-                Join thousands of developers, designers, and Web3 enthusiasts
-                building the future together.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="relative z-10 py-20 text-center">
+      {/* CTA Section */}
+      <section className="relative z-20 w-full py-28 text-center px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto px-4"
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Join the Movement?
+          <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-slate-200 to-slate-400 text-transparent bg-clip-text">
+            Join Our Journey
           </h2>
-          <p className="text-xl text-gray-300 mb-10">
-            Whether you're a developer, creator, or just curious about Web3 —
-            there's a place for you here.
+          <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed">
+            Be part of the movement that's reshaping the digital landscape.
           </p>
-          <motion.a
-            href="/community"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="glow inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-10 py-5 rounded-xl font-semibold text-xl"
+          <motion.button
+            whileHover={{ scale: 1.04, y: -4 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-gradient-to-r from-[#58a6ff] via-[#765dff] to-[#9c88ff] text-white px-12 py-5 rounded-3xl font-bold text-xl flex items-center mx-auto shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
           >
-            Join the Community
-          </motion.a>
+            <Heart className="mr-2" size={24} />
+            Get Involved
+          </motion.button>
         </motion.div>
       </section>
     </div>
