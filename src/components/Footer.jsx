@@ -188,7 +188,7 @@ function Footer() {
               </p>
             </div>
             <div className="w-full md:w-auto">
-              <div className="flex gap-2 max-w-md">
+              <div className="flex gap-2 max-w-md flex-col sm:flex-row">
                 <input
                   type="email"
                   placeholder="Enter your email"
