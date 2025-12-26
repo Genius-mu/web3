@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import { useTheme } from "./context/ThemeContext.jsx";
+// import { useTheme } from "./context/ThemeContext.jsx";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home.jsx";
@@ -74,12 +74,12 @@ function AnimatedRoutes() {
 }
 
 function App() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   return (
     <Router>
       <div
-        className={`min-h-screen w-full ${theme} transition-colors duration-300 bg-[#0c101c]`}
+        className={`min-h-screen w-full transition-colors duration-300 bg-[#0c101c]`}
       >
         <Navbar />
         <AnimatedRoutes />

@@ -20,7 +20,7 @@ export default function Community() {
       title: "Discord Server",
       description:
         "Active voice/text channels, daily discussions, hackathons, and AMAs with Web3 experts.",
-      link: "https://discord.gg/web3hub",
+      link: "https://discord.gg/",
       buttonText: "Join Discord",
       color: "from-[#58a6ff] to-[#765dff]",
     },
@@ -29,7 +29,7 @@ export default function Community() {
       title: "X (Twitter)",
       description:
         "Follow for updates, announcements, memes, and real-time Web3 news.",
-      link: "https://twitter.com/web3hub",
+      link: "https://twitter.com/",
       buttonText: "Follow @web3hub",
       color: "from-[#765dff] to-[#9c88ff]",
     },
@@ -38,7 +38,7 @@ export default function Community() {
       title: "GitHub Organization",
       description:
         "Contribute to our open-source projects, report issues, or submit PRs.",
-      link: "https://github.com/web3hub",
+      link: "https://github.com/",
       buttonText: "Visit GitHub",
       color: "from-[#58a6ff] to-[#9c88ff]",
     },

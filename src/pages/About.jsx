@@ -43,7 +43,7 @@ export default function About() {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#0c101c]">
+    <div className="relative min-h-screen w-full overflow-hidden bg-[rgb(var(--background-rgb))]">
       {/* Background Effects */}
       <div className="absolute inset-0 w-full pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(88,166,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(88,166,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />

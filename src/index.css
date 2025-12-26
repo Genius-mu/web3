@@ -1,32 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 230, 234, 242; /* Soft blue-tinted white for text */
-  --background-rgb: 12, 16, 28; /* Deep midnight blue */
-  --accent-primary: 88, 166, 255; /* Bright sky blue */
-  --accent-secondary: 118, 93, 255; /* Electric violet */
-  --accent-tertiary: 156, 136, 255; /* Soft lavender */
+  --foreground-rgb: 235, 240, 255; /* Brighter, softer blue-white */
+  --background-rgb: 8, 12, 24; /* Deep midnight navy */
+  --background-secondary: 15, 23, 42; /* slate-950 */
+  --accent-primary: 100, 180, 255; /* Vivid sky blue */
+  --accent-secondary: 140, 100, 255; /* Rich electric violet */
+  --accent-tertiary: 180, 140, 255; /* Bright lavender */
 }
 
-/* Light mode variables */
+/* Light mode variables
 .light {
-  --foreground-rgb: 28, 35, 52; /* Dark blue-gray for text */
-  --background-rgb: 248, 250, 252; /* Pure white with blue tint */
-  --background-secondary: 241, 245, 249; /* Slate-100 */
-  --accent-primary: 59, 130, 246; /* Blue-500 */
-  --accent-secondary: 99, 102, 241; /* Indigo-500 */
-  --accent-tertiary: 124, 58, 237; /* Violet-600 */
-}
-
-/* Dark mode (default) */
-.dark {
-  --foreground-rgb: 230, 234, 242;
-  --background-rgb: 12, 16, 28;
-  --background-secondary: 15, 23, 42; /* slate-900 */
-  --accent-primary: 88, 166, 255;
-  --accent-secondary: 118, 93, 255;
-  --accent-tertiary: 156, 136, 255;
-}
+  --foreground-rgb: 33, 37, 41; 
+  --background-rgb: 255, 255, 255; 
+  --background-secondary: 248, 249, 250; 
+  --accent-primary: 13, 110, 253; 
+  --accent-secondary: 25, 135, 84; 
+  --accent-tertiary: 220, 53, 69; 
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -34,14 +25,18 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Light mode background adjustments */
+/* Light mode background gradient */
 .light body {
-  background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-rgb)),
+    rgb(var(--background-secondary))
+  );
 }
 
 /* Dark mode background (default) */
 .dark body {
-  background: #0c101c;
+  background: #080c18;
 }
 
 /* Water-like wave animation - base layer */
@@ -65,10 +60,10 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(var(--accent-primary), 0.08),
-    rgba(var(--accent-secondary), 0.08)
+    rgba(var(--accent-primary), 0.1),
+    rgba(var(--accent-secondary), 0.1)
   );
-  opacity: 0.35;
+  opacity: 0.4;
   animation: wave 12s infinite ease-in-out;
   pointer-events: none;
 }
@@ -102,8 +97,8 @@ body {
   animation: wave-slow 20s infinite ease-in-out;
   background: linear-gradient(
     135deg,
-    rgba(var(--accent-primary), 0.18),
-    rgba(var(--accent-tertiary), 0.15)
+    rgba(var(--accent-primary), 0.2),
+    rgba(var(--accent-tertiary), 0.18)
   );
 }
 
@@ -111,21 +106,26 @@ body {
   animation: wave-fast 14s infinite ease-in-out;
   background: linear-gradient(
     135deg,
-    rgba(var(--accent-secondary), 0.12),
-    rgba(var(--accent-primary), 0.16)
+    rgba(var(--accent-secondary), 0.15),
+    rgba(var(--accent-primary), 0.2)
   );
 }
 
 /* Gradient text for headings */
 .gradient-text {
-  background: linear-gradient(120deg, #58a6ff, #765dff, #9c88ff);
+  background: linear-gradient(120deg, rgb(var(--accent-primary)), rgb(var(--accent-secondary)), rgb(var(--accent-tertiary)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Light mode gradient adjustments */
+/* Light mode gradient text */
 .light .gradient-text {
-  background: linear-gradient(120deg, #3b82f6, #6366f1, #7c3aed);
+  background: linear-gradient(
+    120deg,
+    rgb(var(--accent-primary)),
+    rgb(var(--accent-secondary)),
+    rgb(var(--accent-tertiary))
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -144,24 +144,22 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(var(--accent-primary), 0.15),
+    rgba(var(--accent-primary), 0.2),
     transparent
   );
   background-size: 200% 100%;
   animation: shimmer 3s infinite;
 }
 
-/* Light mode page backgrounds */
-.light [class*="bg-[#0c101c]"] {
-  background: #f8fafc !important;
-}
-
+/* Light mode overrides for Tailwind classes */
+.light [class*="bg-[#0c101c]"],
+.light [class*="bg-slate-950"],
 .light [class*="bg-slate-900"] {
-  background: rgba(241, 245, 249, 0.6) !important;
+  background: #fafcff !important;
 }
 
 .light [class*="bg-slate-800"] {
-  background: rgba(226, 232, 240, 0.6) !important;
+  background: rgba(226, 232, 240, 0.7) !important;
 }
 
 .light [class*="text-slate-300"] {
@@ -173,21 +171,22 @@ body {
 }
 
 .light [class*="border-slate-700"] {
-  border-color: rgba(203, 213, 225, 0.5) !important;
+  border-color: rgba(4, 21, 42, 0.6) !important;
 }
 
 .light [class*="border-slate-800"] {
-  border-color: rgba(226, 232, 240, 0.5) !important;
+  border-color: rgba(226, 232, 240, 0.6) !important;
 }
 
 /* Light mode navbar */
-.light nav {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(226, 232, 240, 0.5) !important;
-}
+/* .light nav {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(226, 232, 240, 0.6) !important;
+  backdrop-filter: blur(8px);
+} */
 
 /* Light mode footer */
-.light footer {
-  background: linear-gradient(to bottom, #f8fafc, #f1f5f9) !important;
-  border-color: rgba(226, 232, 240, 0.5) !important;
-}
+/* .light footer {
+  background: linear-gradient(to bottom, #fafcff, #f0f7ff) !important;
+  border-color: rgba(226, 232, 240, 0.6) !important;
+} */

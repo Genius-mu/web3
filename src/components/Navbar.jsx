@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { Moon, Sun, Wallet, Menu, X } from "lucide-react";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { BrowserProvider, formatEther } from "ethers";
 
 function Navbar() {
-  const { theme, toggleTheme } = useTheme();
+//   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [walletAddress, setWalletAddress] = useState(null);
   const [balance, setBalance] = useState(null);
@@ -103,7 +103,7 @@ function Navbar() {
                 </span>
               </motion.button>
 
-              {/* Theme Toggle */}
+              {/* Theme Toggle
               <motion.button
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.05 }}
@@ -116,7 +116,7 @@ function Navbar() {
                 ) : (
                   <Moon size={20} className="text-[#765dff]" />
                 )}
-              </motion.button>
+              </motion.button> */}
 
               {/* Mobile Menu Button */}
               <motion.button

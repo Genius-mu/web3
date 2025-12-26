@@ -44,7 +44,7 @@ function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#0c101c]">
+    <div className="relative min-h-screen w-full overflow-hidden bg-[rgb(var(--background-rgb))]">
       {/* Animated Background */}
       <motion.div className="absolute inset-0 w-full" style={{ y: bgY }}>
         {/* Wave Layers */}
